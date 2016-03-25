@@ -1,0 +1,418 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Created by Jeff Sale. 2015. Fractal Worlds is a 2D drawing program created with JavaScript. It uses creative ways to draw complex fractal geometries and other types of shapes including snowflakes, spirals, paths, etc." >
+<meta name="keywords" content="drawing, fractal, spline, javascript, creativity, two dimensions">
+<title>2D DIY Fractal Worlds</title>
+<link href="css/sunny/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap-colorpicker.css" rel="stylesheet">
+<link href="css/docs.css" rel="stylesheet">
+<link href="css/SpryTooltip.css" rel="stylesheet">
+<link href="css/buttonstyles.css" rel="stylesheet" type="text/css" />
+<link href="css/fractal_worlds.css" rel="stylesheet" type="text/css">
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/jquery-ui-1.10.3.custom.js"></script>
+<script src="js/SpryTooltip.js"></script>
+<script src="js/preset_scripts.js"></script>
+</head>
+<body>
+<table width="1900" border="0" align="left" cellpadding="0" cellspacing="0">
+    <tr>
+        <td width="1520" align="center" valign="top" id="canvas_bkgd"><canvas id="canvasSignature1" width="1520" height="855"></canvas>
+            <br>
+            <div id="functions_under_canvas">
+                <p>&nbsp;</p>
+                <p><a class="clear_button" href="#" onClick="clearCanvas()">Clear Canvas</a>&nbsp;&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;<a class="clear_button" href="#" onClick="loadBackgroundImage()">Set Canvas Image</a> &nbsp;<a class="clear_button" href="#" onClick="loadBackgroundLayer()">Load Background Layer</a> </p>
+                <p>
+                    <label for="background_image_url">Enter URL for Canvas Image: </label>
+                    <input name="background_image_url" type="text" id="background_image_url" size="128">
+                </p>
+                <p>&copy;Edworlds</p>
+            </div></td>
+        <td width="380" valign="top"><!-- jQuery UI tabs -->
+            
+            <div id="tabs">
+                <ul>
+                    <li><a href="#tabs-1">Objects</a></li>
+                    <li><a href="#tabs-2">Structure</a></li>
+                    <li><a href="#tabs-3">Color</a></li>
+                    <li><a href="#tabs-4">Presets</a></li>
+                </ul>
+                <div id="tabs-1">
+                    <p>
+                        <label for="mode">Drawing Mode:</label>
+                        <select name="mode" id="mode">
+                            <option value="0" selected>Trees</option>
+                            <option value="1">Sierpinski Gasket</option>
+                            <option value="2">Barnsley Ferns</option>
+                            <option value="3">Random Geometries</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="geo_mode">Random Geometries Mode:</label>
+                        <select name="geo_mode" id="geo_mode">
+                            <option value="0">Paths</option>
+                            <option value="1">Random Lines 1</option>
+                            <option value="2">SinCos 1</option>
+                            <option value="3">Spline 1</option>
+                            <option value="4">Snowflakes</option>
+                            <option value="5">Fibonacci Spirals</option>
+                            <option value="6">Normal Spirals</option>
+                            <option value="7" selected>Expanding Circles</option>
+                            <option value="8">SinCos 2</option>
+                            <option value="9">Spline 2</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="add_leaves">Add Leaves:</label>
+                        <input type="checkbox" name="add_leaves" id="add_leaves" checked="checked">
+                    </p>
+                    <p>
+                        <label for="add_random_range">Add Random Range:</label>
+                        <input type="checkbox" name="add_random_range" id="add_random_range" >
+                    </p>
+                    <label for="random_range">Random Range:</label>
+                    <input name="random_range" type="text" class="slider_number" id="random_range" size="5">
+                    <div id="random_range_slider"></div>
+                    <p>&nbsp;</p>
+                    <p>
+                        <label for="random_branch_length">Random Branch Length:</label>
+                        <input type="checkbox" name="random_branch_length" id="random_branch_length">
+                    </p>
+                    <p>
+                        <label for="branch_color">Same Color Branches:</label>
+                        <input type="checkbox" name="branch_color" id="branch_color">
+                    </p>
+                    <h2>Additional Settings</h2>
+                    <p>
+                        <label for="depth_for_trees">Depth for Trees:</label>
+                        <input type="checkbox" name="depth_for_trees" id="depth_for_trees" checked="checked">
+                    </p>
+                    <p>
+                        <label for="num_points"># Fern/Sierpinski Points:</label>
+                        <select name="num_points" id="num_points">
+                            <option value="500">500</option>
+                            <option value="1000" selected>1000</option>
+                            <option value="2000">2000</option>
+                            <option value="5000">5000</option>
+                            <option value="10000">10000</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="left_leaf">Left:</label>
+                        <input type="checkbox" name="left_leaf" id="left_leaf" checked="checked">
+                        <label for="right_leaf">Right:</label>
+                        <input type="checkbox" name="right_leaf" id="right_leaf" checked="checked">
+                    </p>
+                    <p>
+                        <label for="single_random_factor">Single Random Factor?:</label>
+                        <input type="checkbox" name="single_random_factor" id="single_random_factor" checked="checked">
+                        <br>
+                        <label for="single_random_factor_value">Single Random Factor:</label>
+                        <input name="single_random_factor_value" type="text" class="slider_number" id="single_random_factor_value" size="5">
+                    </p>
+                    <div id="single_random_factor_value_slider"></div>
+                    <p>&nbsp;</p>
+                    <label for="one_or_two_branches">One or Two Branches:</label>
+                    <input type="checkbox" name="one_or_two_branches" id="one_or_two_branches" checked="checked">
+                    <p>&nbsp;</p>
+                    <p>
+                        <label for="numbranches"># of Branches Per Level:</label>
+                        <input name="numbranches" type="text" class="slider_number" id="numbranches" size="5">
+                        <span id="sprytrigger0">&nbsp;<img src="images/help.png" width="18" height="18" alt="Help"></span></p>
+                    <div id="numbranches_slider"></div>
+                    <div class="tooltipContent" id="sprytooltip0">
+                        <h3>Number of Branches Per Level</h3>
+                        <p style="color: #FFF; text-align: left;">Branches Per Level determines the number of branches per level. 
+                    </div>
+                    <script type="text/javascript">
+						var sprytooltip0 = new Spry.Widget.Tooltip("sprytooltip0", "#sprytrigger0");
+                    </script>
+                    <p>&nbsp;</p>
+                    <label for="rectangle_size">"Leaf" Size:</label>
+                    <input name="rectangle_size" type="text" class="slider_number" id="rectangle_size" size="5">
+                    <div id="rectangle_size_slider"></div>
+                    <p>&nbsp;</p>
+                </div>
+                <div id="tabs-2">
+                    <h2>General Settings</h2>
+                    <label for="root_node_scale">Object Scale:</label>
+                    <input name="root_node_scale" type="text" class="slider_number" id="root_node_scale" size="5">
+                    <span id="sprytrigger1">&nbsp;<img src="images/help.png" width="18" height="18" alt="Help"></span>
+                    <div id="root_node_scale_slider"></div>
+                    <div class="tooltipContent" id="sprytooltip1">
+                        <h3>Object Scale</h3>
+                        <p style="color: #FFF; text-align: left;">Object Scale sets the scale of of the object. Adjusting this parameter will affect the scale of the entire object such as all tree branches, but will not affect the branch thickness. As a result, small values will cause the branches to appear short and thick, large values will cause the branches to appear long and slender. 
+                    </div>
+                    <script type="text/javascript">
+						var sprytooltip1 = new Spry.Widget.Tooltip("sprytooltip1", "#sprytrigger1");
+					</script>
+                    <p>&nbsp;</p>
+                    <p>
+                        <label for="node_scale_reduction">Tree Fine Tuning:</label>
+                        <input name="node_scale_reduction" type="text" class="slider_number" id="node_scale_reduction" size="5" readonly />
+                        <span id="sprytrigger3">&nbsp;<img src="images/help.png" width="18" height="18" alt="Help"></span></p>
+                    <div id="node_scale_reduction_slider"></div>
+                    <div class="tooltipContent" id="sprytooltip3">
+                        <h3>Global Node Scale Reduction %</h3>
+                        <p style="color: #FFF; text-align: left;">Global Node Scale Reduction % (GNSR) affects the relative scale of nodes at each branch level. Values of GNSR < 100 will cause branches to appear shorter, and for values of GNSR > 100 branches will appear longer. 
+                    </div>
+                    <script type="text/javascript">
+						var sprytooltip3 = new Spry.Widget.Tooltip("sprytooltip3", "#sprytrigger3");
+					</script>
+                    <p>&nbsp;</p>
+                    <p>
+                        <label for="max_branch_level">Max. Branch Level:</label>
+                        <input name="max_branch_level" type="text" class="slider_number" id="max_branch_level" size="5">
+                        <span id="sprytrigger4">&nbsp;<img src="images/help.png" width="18" height="18" alt="Help"></span></p>
+                    <div id="max_branch_level_slider"></div>
+                    <div class="tooltipContent" id="sprytooltip4">
+                        <h3>Max. Branch Level</h3>
+                        <p style="color: #FFF; text-align: left;">Max. Branch Level (MBR) sets the limit to the number of branch levels in the tree. 
+                    </div>
+                    <script type="text/javascript">
+						var sprytooltip4 = new Spry.Widget.Tooltip("sprytooltip4", "#sprytrigger4");
+					</script>
+                    <p>&nbsp;</p>
+                    <p>
+                        <label for="branch_angle">Branch Angle:</label>
+                        <input name="branch_angle" type="text" class="slider_number" id="branch_angle" size="5">
+                        <span id="sprytrigger5">&nbsp;<img src="images/help.png" width="18" height="18" alt="Help"></span></p>
+                    <div id="branch_angle_slider"></div>
+                    <div class="tooltipContent" id="sprytooltip5">
+                        <h3>Branch Angle</h3>
+                        <p style="color: #FFF; text-align: left;">Branch Angle (BA) specifies the angle of a child branch relative to the parent branch. Small values result in narrow branching and slender trees, large values results branches being more spread out. 
+                    </div>
+                    <script type="text/javascript">
+						var sprytooltip5 = new Spry.Widget.Tooltip("sprytooltip5", "#sprytrigger5");
+					</script>
+                    <p>&nbsp;</p>
+                    <p>
+                        <label for="branch_length">Branch Length: </label>
+                        <input name="branch_length" type="text" class="slider_number" id="branch_length" size="5"/>
+                        <span id="sprytrigger6">&nbsp;<img src="images/help.png" width="18" height="18" alt="Help"></span></p>
+                    <div id="branch_length_slider"></div>
+                    <div class="tooltipContent" id="sprytooltip6">
+                        <h3>Branch Length</h3>
+                        <p style="color: #FFF; text-align: left;">Branch Length (BL) sets the same length value for branches at all branch levels. The interplay between this value and Global Node Scale is important to understand. The two parameters sort of offset eachother. 
+                    </div>
+                    <script type="text/javascript">
+						var sprytooltip6 = new Spry.Widget.Tooltip("sprytooltip6", "#sprytrigger6");
+					</script>
+                    <p>&nbsp;</p>
+                    <p>
+                        <label for="branch_length_reduction">Branch Length Reduction %: </label>
+                        <input name="branch_length_reduction" type="text" class="slider_number" id="branch_length_reduction" size="5"/>
+                        <span id="sprytrigger7">&nbsp;<img src="images/help.png" width="18" height="18" alt="Help"></span></p>
+                    <div id="branch_length_reduction_slider"></div>
+                    <div class="tooltipContent" id="sprytooltip7">
+                        <h3>Branch Length Reduction %</h3>
+                        <p style="color: #FFF; text-align: left;">Branch Length Reduction % (BLR) allows you to adjust the relative lengths of between parent and child branches. A value of BLR = 100 should result in all branches being the same length (assuming GNS = 1 and GNSR = 100). Values of BLR < 100 will cause child branches to be shorter than their parents, likewise BLR > 100 will result in child branches longer than the parent. 
+                    </div>
+                    <script type="text/javascript">
+						var sprytooltip7 = new Spry.Widget.Tooltip("sprytooltip7", "#sprytrigger7");
+					</script>
+                    <p>&nbsp;</p>
+                    <p>
+                        <label for="branch_thickness">Branch Thickness: </label>
+                        <input name="branch_thickness" type="text" class="slider_number" id="branch_thickness" size="5"/>
+                        <span id="sprytrigger8">&nbsp;<img src="images/help.png" width="18" height="18" alt="Help"></span></p>
+                    <div id="branch_thickness_slider"></div>
+                    <div class="tooltipContent" id="sprytooltip8">
+                        <h3>Branch Thickness</h3>
+                        <p style="color: #FFF; text-align: left;">Branch Thickness (BT) applies the same value of branch thickness or diameter to branches at all branch levels. Since ANTz limits this value to 1 or smaller, this interface does too. 
+                    </div>
+                    <script type="text/javascript">
+						var sprytooltip8 = new Spry.Widget.Tooltip("sprytooltip8", "#sprytrigger8");
+					</script>
+                    <p>&nbsp;</p>
+                    <p>
+                        <label for="branch_thickness_reduction">Branch Thickness Reduction %: </label>
+                        <input name="branch_thickness_reduction" type="text" class="slider_number" id="branch_thickness_reduction" size="5"/>
+                        <span id="sprytrigger9">&nbsp;<img src="images/help.png" width="18" height="18" alt="Help"></span></p>
+                    <div id="branch_thickness_reduction_slider"></div>
+                    <p>
+                    <div class="tooltipContent" id="sprytooltip9">
+                        <h3>Branch Thickness Reduction %</h3>
+                        <p style="color: #FFF; text-align: left;">Branch Thickness Reduction % (BTR) determines the relative branch thickness between parent and child branches. A value of BTR = 100 will result in branches being the same thickness at all branch levels, BTR < 100 branches will become thinner, BTR > 100 branches will become thicker. 
+                    </div>
+                    <script type="text/javascript">
+						var sprytooltip9 = new Spry.Widget.Tooltip("sprytooltip9", "#sprytrigger9");
+                    </script>
+                    <p>&nbsp;</p>
+                    <label for="spiral_tightness">Spiral Tightness:</label>
+                    <input name="spiral_tightness" type="text" class="slider_number" id="spiral_tightness" size="5">
+                    </p>
+                    <div id="spiral_tightness_slider"></div>
+                    <p>&nbsp;</p>
+                    <label for="line_width">Line Thickness:</label>
+                    <input name="line_width" type="text" class="slider_number" id="line_width" size="5">
+                    <div id="line_width_slider"></div>
+                    <p>&nbsp;</p>
+                </div>
+                <div id="tabs-3">
+                    <table>
+                        <tr>
+                            <td align="center"><p style="color:#FFC;">Branch Level</p></td>
+                            <td><p style="color:#FFC;">Color</p></td>
+                        </tr>
+                        <tr>
+                            <td width="61" align="center"><span style="color:#FFC;">0</span></td>
+                            <td width="165"><input type="color" id="cp1" name="cp1" value="#661100" /></td>
+                        </tr>
+                        <tr>
+                            <td width="61" align="center"><span style="color:#FFC;">1</span></td>
+                            <td width="165"><input type="color" id="cp2" name="cp2" value="#851607" /></td>
+                        </tr>
+                        <tr>
+                            <td width="61" align="center"><span style="color:#FFC;">2</span></td>
+                            <td width="165"><input type="color" id="cp3" name="cp3" value="#d11919" /></td>
+                        </tr>
+                        <tr>
+                            <td width="61" align="center"><span style="color:#FFC;">3</span></td>
+                            <td width="165"><input type="color" id="cp4" name="cp4" value="#a83605" /></td>
+                        </tr>
+                        <tr>
+                            <td width="61" align="center"><span style="color:#FFC;">4</span></td>
+                            <td width="165"><input type="color" id="cp5" name="cp5" value="#a82e27" /></td>
+                        </tr>
+                        <tr>
+                            <td width="61" align="center"><span style="color:#FFC;">5</span></td>
+                            <td width="165"><input type="color" id="cp6" name="cp6" value="#ba5a02" /></td>
+                        </tr>
+                        <tr>
+                            <td width="61" align="center"><span style="color:#FFC;">6</span></td>
+                            <td width="165"><input type="color" id="cp7" name="cp7" value="#cf4253" /></td>
+                        </tr>
+                        <tr>
+                            <td width="61" align="center"><span style="color:#FFC;">7</span></td>
+                            <td width="165"><input type="color" id="cp8" name="cp8" value="#998417" /></td>
+                        </tr>
+                        <tr>
+                            <td width="61" align="center"><span style="color:#FFC;">8</span></td>
+                            <td width="165"><input type="color" id="cp9" name="cp9" value="#d6a831" /></td>
+                        </tr>
+                        <tr>
+                            <td width="61" align="center"><span style="color:#FFC;">9</span></td>
+                            <td width="165"><input type="color" id="cp10" name="cp10" value="#ffc700" /></td>
+                        </tr>
+                        <tr>
+                            <td width="61" align="center"><span style="color:#FFC;">10</span></td>
+                            <td width="165"><input type="color" id="cp11" name="cp11" value="#9bfa00" /></td>
+                        </tr>
+                        <tr>
+                            <td width="61" align="center"><span style="color:#FFC;">11</span></td>
+                            <td width="165"><input type="color" id="cp12" name="cp12" value="#00ff7f" /></td>
+                        </tr>
+                        <tr>
+                            <td width="61" align="center"><span style="color:#FFC;">12</span></td>
+                            <td width="165"><input type="color" id="cp13" name="cp13" value="#ff8800" /></td>
+                        </tr>
+                        <tr>
+                            <td width="61" align="center"><span style="color:#FFC;">All One Color</span></td>
+                            <td width="165"><input type="color" id="all_one_color" name="all_one_color" value="#ff8800" onClick="AllOneColor" /></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="center"><p>
+                                    <label for="random_color_order">Random Color Order:</label>
+                                    <input type="checkbox" name="random_color_order" id="random_color_order" />
+                                </p>
+                                <p>&nbsp;</p>
+                                <label for="alpha_value">Set Alpha:</label>
+                                <input name="alpha_value" type="text" class="slider_number" id="alpha_value" size="5">
+                                <div id="alpha_value_slider"></div>
+                                <p>&nbsp;</p></td>
+                        </tr>
+                        <tr>
+                            <td width="61" align="center"><span style="color:#FFC;">Change Page Bkgd</span></td>
+                            <td><div onClick="changeBackground()" class="input-group colorpicker-component demo demo-auto">
+                                    <input type="text" class="form-control" id="background_color_picker" name="background_color_picker" value="#888888" />
+                                    <span class="input-group-addon"><i></i></span> </div></td>
+                        </tr>
+                        <tr>
+                            <td align="center"><span style="color:#FFC;">Change Canvas Bkgd</span></td>
+                            <td><div onClick="changeCanvasBackground()" class="input-group colorpicker-component demo demo-auto">
+                                    <input type="text" class="form-control" id="canvas_background_color_picker" name="canvas_background_color_picker" value="#888888" />
+                                    <span class="input-group-addon"><i></i></span> </div>
+                                <script src="color_palette_scripts.js" ></script></td>
+                        </tr>
+                        <tr>
+                            <td align="center" colspan="2"><p>
+                                    <input name="AllOneColor" type="button" class="clear_button" id="AllOneColor" value="Single Color"/>
+                                    <input name="setDefaultPalette" type="button" class="clear_button" id="setDefaultPalette" value="Default Palette"/>
+                                    <input name="setTreePalette" type="button" class="clear_button" id="setTreePalette" value="Tree Palette"/>
+                                    <input name="setFernPalette" type="button" class="clear_button" id="setFernPalette" value="Fern Palette"/>
+                                    <input name="setRainbowPalette" type="button" class="clear_button" id="setRainbowPalette" value="Rainbow Palette"/>
+                                    <input name="setRedPalette" type="button" class="clear_button" id="setRedPalette" value="Red Palette" />
+                                    <input name="setGreenPalette" type="button" class="clear_button" id="setGreenPalette" value="Green Palette" />
+                                    <input name="setBluePalette" type="button" class="clear_button" id="setBluePalette" value="Blue Palette" />
+                                </p>
+                        </tr>
+                        <tr>
+                            <td align="center" colspan="2"><h2>Shadow/Blur/Glow</h2>
+                                <p>
+                                    <label for="add_shadow">Add Shadow/Blur/Glow:</label>
+                                    <input type="checkbox" name="add_shadow" id="add_shadow" >
+                                </p>
+                                <p>
+                                    <input type="color" id="shadow_color" name="shadow_color" value="#ffffff" />
+                                </p>
+                                <p>
+                                    <label for="shadow_offset">Shadow/Blur/Glow Offset:</label>
+                                    <input name="shadow_offset" type="text" class="slider_number" id="shadow_offset" size="5">
+                                    <span id="sprytrigger_shadow_offset">&nbsp;<img src="images/help.png" width="18" height="18" alt="Help"></span> </p>
+                                <div id="shadow_offset_slider"></div>
+                                <div class="tooltipContent" id="sprytooltip_shadow_offset">
+                                    <h3> Offset</h3>
+                                    <p style="color:#FFF;">If Shadow/Blur/Glow is enabled, this sets the # of pixels to blur. 
+                                </div>
+                                <script type="text/javascript">
+								var sprytooltip_shadow_offset = new Spry.Widget.Tooltip("sprytooltip_shadow_offset", "#sprytrigger_shadow_offset");
+                                </script>
+                                <p>&nbsp;</p>
+                                <p>
+                                    <label for="shadow_blur"> Blur:</label>
+                                    <input name="shadow_blur" type="text" class="slider_number" id="shadow_blur" size="5">
+                                    <span id="sprytrigger_shadow_blur">&nbsp;<img src="images/help.png" width="18" height="18" alt="Help"></span> </p>
+                                <div id="shadow_blur_slider"></div>
+                                <div class="tooltipContent" id="sprytooltip_shadow_blur">
+                                    <h3> Blur</h3>
+                                    <p style="color:#FFF;">If Shadow and Glow is enabled, this sets the # of pixels offset down and to the right. 
+                                </div>
+                                <script type="text/javascript">
+                    var sprytooltip_shadow_blur = new Spry.Widget.Tooltip("sprytooltip_shadow_blur", "#sprytrigger_shadow_blur");
+                                </script>
+                                <p>&nbsp;</p></td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="tabs-4">
+                    <input type="button" class="fractal_tree_button" onClick="FractalTreeSettings()" id="setFractalTreePalette" value="">
+                    <input type="button" class="sierpinski_gasket_button" onClick="SierpinskiGasketSettings()" id="setSierpinskiGasketPalette" value="">
+                    <input type="button" class="barnsley_fern_button" onClick="BarnsleyFernSettings()" id="setBarnsleyFernPalette" value="">
+                    <input type="button" class="simple_path_button" onClick="SimplePathSettings()" id="setSimplePathPalette" value="">
+                    <input type="button" class="white_snowflake_button" onClick="WhiteSnowflakeSettings()" id="setWhiteSnowflakePalette" value="">
+                    <input type="button" class="rainbow_snowflake_button" onClick="RainbowSnowflakeSettings()" id="setRainbowSnowflakePalette" value="">
+                    <input type="button" class="arteries_button" onClick="ArteriesSettings()" id="setArteriesPalette" value="">
+                    <input type="button" class="peter_max_button" onClick="PeterMaxSettings()" id="setPeterMaxPalette" value="">
+                    <input type="button" class="chakras_button" onClick="ChakraSettings()" id="setChakrasPalette" value="">
+                    <input type="button" class="space_ferns_button" onClick="SpaceFernsSettings()" id="setSpaceFernsPalette" value="">
+                    <input type="button" class="charcoal_sketch_button" onClick="CharcoalSketchSettings()" id="setCharcoalSketchPalette" value="">
+                    <input type="button" class="worm_lines_button" onClick="WormLinesSettings()" id="setWormLinesPalette" value="">
+                </div>
+            </div></td>
+    </tr>
+</table>
+<footer> </footer>
+<script src="js/drawing_functions.js"></script> 
+<script src="js/slider_functions.js"></script> 
+<script src="js/bootstrap.js"></script> 
+<script src="js/bootstrap-colorpicker.js"></script> 
+<script src="js/docs.js"></script> 
+<script src="js/draw_worlds.js"></script>
+</body>
+</html>

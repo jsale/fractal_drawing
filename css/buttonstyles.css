@@ -1,0 +1,362 @@
+/* CSS Document */
+
+ /* Font Definitions */
+@font-face
+	{font-family:"Book Antiqua";
+	panose-1:2 4 6 2 5 3 5 3 3 4;}
+	
+@font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+	
+ /* Style Definitions */
+div.bluebottomborder{
+	border:none;
+	border-bottom:solid #4F81BD 1.0pt;padding:0in 0in 4.0pt 0in;}
+	
+div.blackbottomborder{
+	border:none;
+	border-bottom:solid windowtext 1.5pt;
+	padding:0in 0in 1.0pt 0in;}
+	
+p.Title
+	{margin:0in;
+	margin-bottom:.0001pt;
+	border:none;
+	padding:0in;
+	font-size:22.0pt;
+	font-family:"Cambria","serif";
+	color:#17365D;
+	letter-spacing:.25pt;}
+	
+p.Subtitle
+	{margin:0in;
+	margin-bottom:.0001pt;
+	border:none;
+	padding:0in;
+	font-size:16.0pt;
+	font-family:"Cambria","serif";
+	color:#17365D;
+	letter-spacing:.25pt;}
+	
+ p.Normal, li.Normal, div.Normal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:14.0pt;
+	font-family:"Cambria","serif"} 
+	
+ p.NormalIndent
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0.5in;
+	line-height:115%;
+	font-size:14.0pt;
+	font-family:"Cambria","serif";}	
+
+ p.NormalNonBreakingSpace
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0.5in;
+	line-height:115%;
+	font-size:14.0pt;
+	font-family:"Cambria","serif";}	
+	
+ p.Admin_Error_Message
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	color: #FF0000;
+	line-height:115%;
+	font-size:16.0pt;
+	font-family:"Cambria","serif";} 
+	
+ p.Admin_Success_Message
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	color: #00AA00;
+	line-height:115%;
+	font-size:16.0pt;
+	font-family:"Cambria","serif";} 
+	
+ p.Assessment_Question
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:18.0pt;
+	font-family:"Cambria","serif"} 
+	
+ p.Assessment_Answer
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:16.0pt;
+	font-family:"Cambria","serif";} 
+	
+ p.Alert_Message
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	color:#FF0000;
+	margin-left:0in;
+	line-height:115%;
+	font-size:18.0pt;
+	font-family:"Cambria","serif";} 
+	
+select.Menu_Select {
+	font-size:14.0pt;
+	background-color:#DDD7FF;}
+
+.clear_button {
+  font-family:Arial, Helvetica, sans-serif;
+  width: 140px;
+  color: #ffffff;
+  font-size: 15px;
+  padding: 10px;
+  text-decoration: none;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-box-shadow: 0px 1px 3px #666666;
+  -moz-box-shadow: 0px 1px 3px #666666;
+  text-shadow: 1px 1px 3px #666666;
+  border: solid #092047 1px;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#EEC809), to(#DDAA00));
+  background: -moz-linear-gradient(top, #EEC809, #DDAA00);
+}
+
+.clear_button:hover {
+  background: #FFE829;
+}
+
+.button_container {
+	background-color: #FFF;
+	margin: 0 auto; 
+}
+
+.button_content {
+	text-align:center;
+	padding: 10px 0;
+}
+
+.rainbow_snowflake_button {
+  width: 150px;
+  height: 150px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-box-shadow: 0px 1px 3px #666666;
+  -moz-box-shadow: 0px 1px 3px #666666;
+  border: solid #092047 1px;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#00cc00), to(#006600));
+  background: -moz-linear-gradient(top, #00cc00, #006600);
+  background-image:url(../images/buttons/rainbow_snowflake_button.jpg);
+}
+
+.rainbow_snowflake_button:hover {
+  background: #CCCCCC;
+  background-image:url(../images/buttons/rainbow_snowflake_button_hover.jpg);
+}
+
+.white_snowflake_button {
+  width: 150px;
+  height: 150px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-box-shadow: 0px 1px 3px #666666;
+  -moz-box-shadow: 0px 1px 3px #666666;
+  border: solid #092047 1px;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#00cc00), to(#006600));
+  background: -moz-linear-gradient(top, #00cc00, #006600);
+  background-image:url(../images/buttons/white_snowflake_button.jpg);
+}
+
+.white_snowflake_button:hover {
+  background: #CCCCCC;
+  background-image:url(../images/buttons/white_snowflake_button_hover.jpg);
+}
+
+.arteries_button {
+  width: 150px;
+  height: 150px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-box-shadow: 0px 1px 3px #666666;
+  -moz-box-shadow: 0px 1px 3px #666666;
+  border: solid #092047 1px;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#00cc00), to(#006600));
+  background: -moz-linear-gradient(top, #00cc00, #006600);
+  background-image:url(../images/buttons/arteries_button.jpg);
+}
+
+.arteries_button:hover {
+  background: #CCCCCC;
+  background-image:url(../images/buttons/arteries_button_hover.jpg);
+}
+
+.peter_max_button {
+  width: 150px;
+  height: 150px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-box-shadow: 0px 1px 3px #666666;
+  -moz-box-shadow: 0px 1px 3px #666666;
+  border: solid #092047 1px;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#00cc00), to(#006600));
+  background: -moz-linear-gradient(top, #00cc00, #006600);
+  background-image:url(../images/buttons/peter_max_button.jpg);
+}
+
+.peter_max_button:hover {
+  background: #CCCCCC;
+  background-image:url(../images/buttons/peter_max_button_hover.jpg);
+}
+
+.chakras_button {
+  width: 150px;
+  height: 150px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-box-shadow: 0px 1px 3px #666666;
+  -moz-box-shadow: 0px 1px 3px #666666;
+  border: solid #092047 1px;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#00cc00), to(#006600));
+  background: -moz-linear-gradient(top, #00cc00, #006600);
+  background-image:url(../images/buttons/chakras_button.jpg);
+}
+
+.chakras_button:hover {
+  background: #CCCCCC;
+  background-image:url(../images/buttons/chakras_button_hover.jpg);
+}
+
+.space_ferns_button {
+  width: 150px;
+  height: 150px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-box-shadow: 0px 1px 3px #666666;
+  -moz-box-shadow: 0px 1px 3px #666666;
+  border: solid #092047 1px;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#00cc00), to(#006600));
+  background: -moz-linear-gradient(top, #00cc00, #006600);
+  background-image:url(../images/buttons/space_ferns_button.jpg);
+}
+
+.space_ferns_button:hover {
+  background: #CCCCCC;
+  background-image:url(../images/buttons/space_ferns_button_hover.jpg);
+}
+
+.charcoal_sketch_button {
+  width: 150px;
+  height: 150px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-box-shadow: 0px 1px 3px #666666;
+  -moz-box-shadow: 0px 1px 3px #666666;
+  border: solid #092047 1px;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#00cc00), to(#006600));
+  background: -moz-linear-gradient(top, #00cc00, #006600);
+  background-image:url(../images/buttons/charcoal_sketch_button.jpg);
+}
+
+.charcoal_sketch_button:hover {
+  background: #CCCCCC;
+  background-image:url(../images/buttons/charcoal_sketch_button_hover.jpg);
+}
+
+.worm_lines_button {
+  width: 150px;
+  height: 150px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-box-shadow: 0px 1px 3px #666666;
+  -moz-box-shadow: 0px 1px 3px #666666;
+  border: solid #092047 1px;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#00cc00), to(#006600));
+  background: -moz-linear-gradient(top, #00cc00, #006600);
+  background-image:url(../images/buttons/worm_lines_button.jpg);
+}
+
+.worm_lines_button:hover {
+  background: #CCCCCC;
+  background-image:url(../images/buttons/worm_lines_button_hover.jpg);
+}
+.simple_path_button {
+  width: 150px;
+  height: 150px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-box-shadow: 0px 1px 3px #666666;
+  -moz-box-shadow: 0px 1px 3px #666666;
+  border: solid #092047 1px;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#00cc00), to(#006600));
+  background: -moz-linear-gradient(top, #00cc00, #006600);
+  background-image:url(../images/buttons/simple_path_button.jpg);
+}
+
+.simple_path_button:hover {
+  background: #CCCCCC;
+  background-image:url(../images/buttons/simple_path_button_hover.jpg);
+}
+.fractal_tree_button {
+  width: 150px;
+  height: 150px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-box-shadow: 0px 1px 3px #666666;
+  -moz-box-shadow: 0px 1px 3px #666666;
+  border: solid #092047 1px;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#00cc00), to(#006600));
+  background: -moz-linear-gradient(top, #00cc00, #006600);
+  background-image:url(../images/buttons/fractal_tree_button.jpg);
+}
+
+.fractal_tree_button:hover {
+  background: #CCCCCC;
+  background-image:url(../images/buttons/fractal_tree_button_hover.jpg);
+}
+.sierpinski_gasket_button {
+  width: 150px;
+  height: 150px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-box-shadow: 0px 1px 3px #666666;
+  -moz-box-shadow: 0px 1px 3px #666666;
+  border: solid #092047 1px;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#00cc00), to(#006600));
+  background: -moz-linear-gradient(top, #00cc00, #006600);
+  background-image:url(../images/buttons/sierpinski_gasket_button.jpg);
+}
+
+.sierpinski_gasket_button:hover {
+  background: #CCCCCC;
+  background-image:url(../images/buttons/sierpinski_gasket_button_hover.jpg);
+}
+.barnsley_fern_button {
+  width: 150px;
+  height: 150px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-box-shadow: 0px 1px 3px #666666;
+  -moz-box-shadow: 0px 1px 3px #666666;
+  border: solid #092047 1px;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#00cc00), to(#006600));
+  background: -moz-linear-gradient(top, #00cc00, #006600);
+  background-image:url(../images/buttons/barnsley_fern_button.jpg);
+}
+
+.barnsley_fern_button:hover {
+  background: #CCCCCC;
+  background-image:url(../images/buttons/barnsley_fern_button_hover.jpg);
+}
