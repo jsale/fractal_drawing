@@ -10,7 +10,7 @@ h1,h2,h3,label {
 }
 
 #canvas_bkgd {
-	background:url(http://localhost/fractal_fft/images/blank.png) no-repeat;
+	background:url(../images/blank.png) no-repeat;
 	border-bottom:medium #FC0;
 }
 
