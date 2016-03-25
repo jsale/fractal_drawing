@@ -1,14 +1,14 @@
 # fractal_drawing
-A Two-Dimensional Drawing Application to Teach Beauty and Truth, As Well As Mathematics, Computer Science, and Computer Science Principles
+# A Two-Dimensional Drawing Application to Teach Beauty and Truth, As Well As Mathematics, Computer Science, and Computer Science Principles
 
-Draft Proposal
+# Draft Proposal
 
-Table of Contents
+# Table of Contents
 
-Introduction
-Background
-Design Approach
-Future Plans
+# Introduction
+# Background
+# Design Approach
+# Future Plans
 Instructional ‘Realms of Focus
 General Overview of the 2D GUI
 Practical Hands-On Lessons            
