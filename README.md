@@ -1,30 +1,11 @@
 # fractal_drawing
 A Two-Dimensional Drawing Application to Teach Beauty and Truth, As Well As Mathematics, Computer Science, and Computer Science Principles
-Draft Proposal
-
-Table of Contents
-
-Introduction
-
-Background
-
-Design Approach
-
-Future Plans
-
-Instructional ‘Realms of Focus
-
-General Overview of the 2D GUI
-
-Practical Hands-On Lessons            
-
-Standards Alignment
 
 Introduction
 
 For years, STEM education has been increasing outreach efforts to be more inclusive of underrepresented communities, especially girls and young women. Also, outreach to the arts and humanities has increased, leading to a modification of the STEM acronym to include the letter ‘A’ for Art, giving STEAM.
 
-Programs like Processing have gone a long way to engaging the more artistically-inclined. 
+Programs like Processing have gone a long way to engaging the more artistically-inclined... (more TBD)
 
 Background
 
@@ -38,6 +19,7 @@ Our practical hands-on lesson design begins by teaching the student how to write
 For 3d, I have written code which outputs a CSV file for a 3D visualization tool called ANTz. Here is the format for the course. 
 
 Instructional ‘Realms of Focus’
+
 
 
 Mathematics 
@@ -55,6 +37,8 @@ Classical Calculus
 Lambda Calculus
 
 
+
+
 Computer Science 
 
 
@@ -69,6 +53,8 @@ Conditions
 Recursion
 
 Debugging
+
+
 
 
 Computer Science Principles 
@@ -89,12 +75,16 @@ Problem-solving
 Innovation
 
 
+
+
 Other Realms of Importance
 
 
 Integration
 
 Process
+
+
 
 
 Future Plans
