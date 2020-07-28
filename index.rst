@@ -1,6 +1,9 @@
-# fractal_drawing
-A Two-Dimensional Drawing Application to Teach Beauty and Truth, As Well As Mathematics, Computer Science, and Computer Science Principles
-------------------------------------------------------------------------------------------------------------------------------------------
+Fractal Drawing
+---------------
+A Two-Dimensional Drawing Application to Teach Beauty and Truth*
+----------------------------------------------------------------
+(*As Well As Mathematics, Computer Science, and Computer Science Principles)
+
 Introduction
 ------------
 For years, STEM education has been increasing outreach efforts to be more inclusive of underrepresented communities, especially girls and young women. Also, outreach to the arts and humanities has increased, leading to a modification of the STEM acronym to include the letter ‘A’ for Art, giving STEAM.
