@@ -63,3 +63,13 @@ Links
 -----
 .. _Wikipedia: https://www.wikipedia.org/
 .. _Linux kernel archive: https://www.kernel.org/
+
+Videos
+-----
+..raw:: html
+<embed>
+    <video width="560" height="360" controls>
+      <source src="assets/recording/202007_security_tips.mp4" type="video/mp4">
+    </video>
+</embed>
+
