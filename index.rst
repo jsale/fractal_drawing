@@ -66,10 +66,8 @@ Links
 
 Videos
 -----
-..raw:: html
+.. raw:: html
 <embed>
-    <video width="560" height="360" controls>
-      <source src="assets/recording/202007_security_tips.mp4" type="video/mp4">
-    </video>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2oSPDbeVBH0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </embed>
 
