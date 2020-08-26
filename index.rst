@@ -116,8 +116,8 @@ subsubtitle
         import image
         
 .. raw:: html
-  <h2>Bob's Your Uncle!</h2>
-..
+    <h2>Bob's Your Uncle!</h2>
+
 -----
 
 Miscellaneous
