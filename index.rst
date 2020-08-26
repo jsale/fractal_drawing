@@ -100,7 +100,21 @@ subsubtitle
 | body row 4 |            | - blocks. |
 +------------+------------+-----------+
 
+.. figure:: images/help.png
+    :width: 100px
+    :align: center
+    :height: 100px
+    :alt: alternate text
+    :figclass: align-center
 
+    Fig. 1: figures are like images but with a caption
+
+    and whatever else you wish to add
+
+    .. code-block:: python
+
+        import image
+        
 .. raw:: html
   <h2>Bob's Your Uncle!</h2>
 ..
