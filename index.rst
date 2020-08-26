@@ -61,8 +61,14 @@ Unity
 
 Videos
 -----
+*italic*
+
+**bold**
+
+link `shecky <https://www.iluvdata.org>`
+
 .. raw:: html
-  <h2>Hello, Shecky!!</h2>
+
 -----
 
 Links
