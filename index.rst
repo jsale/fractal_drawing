@@ -124,7 +124,7 @@ Miscellaneous
 -----
 .. raw:: html
 
-   <hr width=50 size=10>
+   <hr width=50 size=10><h2>Bob's Your Uncle!</h2><hr width=50 size=20>
 
 
 Links
