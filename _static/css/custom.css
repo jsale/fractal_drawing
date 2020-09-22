@@ -194,7 +194,7 @@ legend,
 .rst-content .toctree-wrapper p.caption,
 .rst-versions {
     /* Use a system font stack for better performance (no Web fonts required) */
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: "Tauri", sans-serif;
 }
 
 h1,
