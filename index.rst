@@ -2,7 +2,7 @@ Fractal Drawing
 ---------------
 A Two-Dimensional Drawing Application to Teach Beauty and Truth*
 ----------------------------------------------------------------
-(*As Well As Mathematics, Computer Science, and Computer Science Principles)
+As Well As Mathematics, Computer Science, and Computer Science Principles
 
 Introduction
 ------------
@@ -115,13 +115,8 @@ subsubtitle
 
         import image
         
-.. raw:: html
-    <h2>Bob's Your Uncle!</h2>
-
------
-
 Miscellaneous
------
+-------------
 .. raw:: html
 
    <hr width=50 size=10>
