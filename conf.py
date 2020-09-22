@@ -1,4 +1,5 @@
 ## conf.py
+master_doc = 'index'
 
 # These folders are copied to the documentation's HTML output
 html_static_path = ['_static']
